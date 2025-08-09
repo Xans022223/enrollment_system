@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../../public/assets/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../../public/assets/images/logo.png" alt="NCST Logo" class="logo">
+                <span class="brand">NCST</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="pre-enrolled.html">Pre-Enrolled</a></li>
+                    <li><a href="section.html">Section</a></li>
+                    <li><a href="prospectus.html">Subjects</a></li>
+                    <li><a href="grading.html">Grading</a></li>
+                    <li><a href="course.html">Course</a></li>
+                    <li><a href="user.html">User</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Navbar -->
+            <header class="navbar">
+                <div class="school-year-dropdown-container">
+                    <div class="school-year" id="schoolYearBtn">
+                        <span>2025 - 2026</span>
+                        <span class="dropdown-arrow">&#9660;</span>
+                    </div>
+                    <div class="school-year-dropdown" id="schoolYearDropdown">
+                        <div class="dropdown-year">2025 - 2026</div>
+                        <div class="dropdown-year">2024 - 2025</div>
+                        <div class="dropdown-year">2023 - 2024</div>
+                        <div class="dropdown-year">2022 - 2023</div>
+                        <div class="dropdown-year">2021 - 2022</div>
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <div class="user-avatar" id="userAvatar">
+                        <span class="avatar-circle">M</span>
+                    </div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <img src="../../public/assets/images/user1.jpg" alt="Profile" class="dropdown-avatar">
+                            <div class="dropdown-info">
+                                <div class="dropdown-name">migo</div>
+                                <div class="dropdown-email">123@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="dropdown-logout">
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <h2 class="dashboard-title">Dashboard</h2>
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <div class="card-title">Total Administrator</div>
+                        <div class="card-value">1</div>
+                        <div class="card-desc">Number of admin</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-title">Total Pre-Enrolled</div>
+                        <div class="card-value">1</div>
+                        <div class="card-desc">Number of pre-enrolled</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-title">Total Subject</div>
+                        <div class="card-value">2</div>
+                        <div class="card-desc">Number of subject registered</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-title">Total Course</div>
+                        <div class="card-value">9</div>
+                        <div class="card-desc">Number of courses</div>
+                    </div>
+                </div>
+                <div class="dashboard-lists">
+                    <div class="dashboard-list-left" style="width:100%;">
+                        <div class="list-title">Recent Pre-Enrolled</div>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                            <div></div>
+                        </div>
+                        <div class="list-table-wrapper">
+                            <table class="list-table">
+                                <thead>
+                                    <tr>
+                                        <th>Student ID</th>
+                                        <th>Name</th>
+                                        <th>Course</th>
+                                        <th>Section</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2023-54844</td>
+                                        <td>BRENNAN APAWAN</td>
+                                        <td>BS-IT</td>
+                                        <td>IT-M1</td>
+                                        <td>Enrolled</td>
+                                        <td>
+                                            <button class="action-btn" title="Download">&#128229;</button>
+                                            <button class="action-btn" title="Edit">&#9998;</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2023-54445</td>
+                                        <td>KOY MANAMPAN</td>
+                                        <td>BS-IT</td>
+                                        <td>IT-1A</td>
+                                        <td>Enrolled</td>
+                                        <td>
+                                            <button class="action-btn" title="Download">&#128229;</button>
+                                            <button class="action-btn" title="Edit">&#9998;</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table-pagination">
+                                <select class="table-pagination-select">
+                                    <option>10</option>
+                                    <option>25</option>
+                                    <option>50</option>
+                                </select>
+                                <span class="table-pagination-info">Displaying 1 - 2 of 2 records</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-list-right">
+                        <div class="list-title">Recent Enrolled</div>
+                        <ul class="recent-enrolled-list">
+                            <li>
+                                <span style="color:#2d82f1;font-size:1.2em;vertical-align:middle;">&#9679;</span>
+                                <span style="margin-left:8px;">2023-54844</span>
+                                <span style="float:right;color:#b0b0b0;font-size:0.95em;">Course: BS-IT</span>
+                            </li>
+                            <li>
+                                <span style="color:#2d82f1;font-size:1.2em;vertical-align:middle;">&#9679;</span>
+                                <span style="margin-left:8px;">2023-54445</span>
+                                <span style="float:right;color:#b0b0b0;font-size:0.95em;">Course: BS-IT</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="editModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message" style="font-weight:600;">Edit Student Info</div>
+            <form id="editForm">
+                <div class="modal-form-group">
+                    <label for="editStudentId">Student ID</label>
+                    <input type="text" id="editStudentId" name="studentId" />
+                </div>
+                <div class="modal-form-group">
+                    <label for="editName">Name</label>
+                    <input type="text" id="editName" name="name" required />
+                </div>
+                <div class="modal-form-group">
+                    <label for="editCourse">Course</label>
+                    <input type="text" id="editCourse" name="course" required />
+                </div>
+                <div class="modal-form-group">
+                    <label for="editSection">Section</label>
+                    <input type="text" id="editSection" name="section" required />
+                </div>
+                <div class="modal-form-group">
+                    <label for="editStatus">Status</label>
+                    <input type="text" id="editStatus" name="status" required />
+                </div>
+                <button type="submit" class="modal-save-btn">Save</button>
+                <button type="button" id="editCancelBtn" class="modal-cancel-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== View Modal ===== -->
+    <div id="viewModal" class="modal-overlay">
+        <div class="modal-box view-modal-box card-view-modal">
+            <button id="viewCloseBtn" class="close-btn">&times;</button>
+            <div class="view-modal-content">
+                <div class="card-section">
+                    <div class="card-section-header"><i class="fas fa-clipboard-list"></i> Pre-Enrollment Info</div>
+                    <table class="card-info-table">
+                        <tr>
+                            <td>Course</td>
+                            <td data-field="course"></td>
+                        </tr>
+                        <tr>
+                            <td>Year Level</td>
+                            <td data-field="year"></td>
+                        </tr>
+                        <tr>
+                            <td>Semester</td>
+                            <td data-field="semester"></td>
+                        </tr>
+                        <tr>
+                            <td>School Year</td>
+                            <td data-field="schoolYear"></td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td data-field="status"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-section">
+                    <div class="card-section-header"><i class="fas fa-user"></i> Student Info</div>
+                    <table class="card-info-table">
+                        <tr>
+                            <td>Fullname</td>
+                            <td data-field="fullname"></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td data-field="gender"></td>
+                        </tr>
+                        <tr>
+                            <td>Birthday</td>
+                            <td data-field="birthday"></td>
+                        </tr>
+                        <tr>
+                            <td>Birthplace</td>
+                            <td data-field="birthplace"></td>
+                        </tr>
+                        <tr>
+                            <td>Civil Status</td>
+                            <td data-field="civilStatus"></td>
+                        </tr>
+                        <tr>
+                            <td>Religion</td>
+                            <td data-field="religion"></td>
+                        </tr>
+                        <tr>
+                            <td>Nationality</td>
+                            <td data-field="nationality"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-section">
+                    <div class="card-section-header"><i class="fas fa-book"></i> Subjects</div>
+                    <table class="card-subjects-table">
+                        <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Title</th>
+                                <th>Unit</th>
+                                <th>Pre-Requisite</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FL 101</td>
+                                <td>FILIPINO 1</td>
+                                <td>3</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>ENG 101</td>
+                                <td>ENGLISH 1</td>
+                                <td>3</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>CS 101</td>
+                                <td>INTRO TO COMPUTING</td>
+                                <td>3</td>
+                                <td>—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-modal-actions">
+                <button class="action-btn card-download">Download Form</button>
+                <button class="action-btn card-enroll" style="display: none;">Enroll</button>
+                <button class="action-btn card-pending" style="display: none;">Pending</button>
+                <button class="action-btn card-reject">Reject</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Confirm Delete Modal -->
+    <div id="confirmDeleteModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message">Are you sure you want to delete this record?</div>
+            <button id="confirmDeleteYes" class="modal-delete-btn">Yes, Delete</button>
+            <button id="confirmDeleteCancel" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+    <!-- Success Modal -->
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-box">
+            <div id="successModalMsg" class="modal-message"></div>
+            <button id="successModalOk" class="modal-ok-btn">OK</button>
+        </div>
+    </div>
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message">Are you sure you want to logout?</div>
+            <button id="logoutYesBtn" class="modal-delete-btn">Yes, Logout</button>
+            <button id="logoutCancelBtn" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Download Confirmation Modal for Recent Pre-Enrolled -->
+    <div id="downloadConfirmModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message">Do you want to download this form?</div>
+            <button id="downloadConfirmBtn" class="modal-save-btn">Download</button>
+            <button id="downloadCancelBtn" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Notification Pop-up -->
+    <div id="notificationModal" class="modal-overlay">
+        <div class="modal-box notification-modal">
+            <div class="notification-icon">
+                <i class="fas fa-check-circle success"></i>
+                <i class="fas fa-exclamation-circle warning"></i>
+                <i class="fas fa-times-circle error"></i>
+            </div>
+            <div id="notificationMessage" class="modal-message"></div>
+            <button id="notificationCloseBtn" class="modal-ok-btn">OK</button>
+        </div>
+    </div>
+
+    <!-- Download Form Confirmation Modal (View Modal) -->
+    <div id="viewDownloadConfirmModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message">Do you want to download this form?</div>
+            <button id="viewDownloadConfirmBtn" class="modal-save-btn">Download</button>
+            <button id="viewDownloadCancelBtn" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+    <!-- Pending/Enroll Confirmation Modal (View Modal) -->
+    <div id="viewPendingConfirmModal" class="modal-overlay">
+        <div class="modal-box">
+            <div id="viewPendingModalMessage" class="modal-message">Do you want to enroll this student?</div>
+            <button id="viewPendingConfirmBtn" class="modal-save-btn">Confirm</button>
+            <button id="viewPendingCancelBtn" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+    <!-- Reject Confirmation Modal (View Modal) -->
+    <div id="viewRejectConfirmModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message">Reject this student?</div>
+            <button id="viewRejectConfirmBtn" class="modal-save-btn">Reject</button>
+            <button id="viewRejectCancelBtn" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="../../public/assets/js/dashboard.js"></script>
+
+</body>
+
+</html>

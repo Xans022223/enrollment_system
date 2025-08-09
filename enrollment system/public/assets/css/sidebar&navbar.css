@@ -1,0 +1,411 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    background: #f5f6fa;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    height: auto;
+    align-items: stretch;
+}
+
+.sidebar {
+    width: 240px;
+    background: #23243a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: auto;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 24px 20px 16px 20px;
+    border-bottom: 1px solid #2e2f45;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: #bfc1d0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-nav li.active,
+.sidebar-nav li:hover {
+    background: #2d82f1;
+    color: #fff;
+}
+
+.sidebar-nav a {
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #f5f6fa;
+}
+
+.navbar {
+    height: 56px;
+    background: #f7ec5d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.school-year-dropdown-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.school-year {
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    padding: 0 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.school-year:hover,
+.school-year:focus {
+    background: #d8c410;
+}
+
+.dropdown-arrow {
+    font-size: 0.8em;
+    margin-left: 6px;
+}
+
+.school-year-dropdown {
+    display: none;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    min-width: 160px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    z-index: 9999;
+    padding: 8px 0;
+}
+
+.school-year-dropdown.show {
+    display: block;
+}
+
+.dropdown-year {
+    padding: 10px 20px;
+    color: #23243a;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-year:hover {
+    background: #f5f6fa;
+    color: black;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.user-avatar {
+    position: relative;
+    cursor: pointer;
+    margin-left: 24px;
+}
+
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    background: #f5f6fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid gray;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+    overflow: hidden;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    z-index: 9999;
+    overflow: hidden;
+    min-width: 260px;
+    margin-top: 8px;
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+.dropdown-header {
+    background: gray;
+    color: #fff;
+    padding: 20px 20px 16px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+    border: 2px solid #fff;
+    background: #fff;
+}
+
+.dropdown-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.dropdown-email {
+    font-size: 0.95rem;
+    color: black;
+    margin-top: 2px;
+}
+
+.dropdown-logout {
+    background: #fff;
+    padding: 16px 20px;
+    border-top: 1px solid #eee;
+}
+
+.dropdown-logout a {
+    color: gray;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.dropdown-logout a:hover {
+    color: #000000;
+}
+
+.sidebar-profile {
+    background: #b71c3a;
+    color: #fff;
+    padding: 20px 20px 16px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.profile-avatar {
+    width: 56px;
+    height: 56px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    overflow: hidden;
+}
+
+.avatar-initials {
+    color: #b71c3a;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.profile-email {
+    font-size: 0.95rem;
+    color: #f5c6cb;
+    margin-top: 2px;
+}
+
+.sidebar-logout {
+    margin-top: auto;
+    padding: 20px 24px;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+.sidebar-logout a {
+    color: #2eb71c;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.sidebar-logout a:hover {
+    color: #23243a;
+}
+
+.dashboard-content {
+    max-width: 1500px;
+    min-height: calc(100vh - 56px);
+    padding: 32px 0 32px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #f5f6fa;
+}
+
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #23243a;
+}
+
+.dashboard-cards {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.dashboard-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    padding: 32px 32px 24px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 220px;
+    min-height: 100px;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #23243a;
+}
+
+.card-value.placeholder {
+    color: #bbb;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+}
+
+.dashboard-lists {
+    display: flex;
+    gap: 8px;
+    margin-top: 0;
+    width: 100%;
+    flex: 1;
+}
+
+.dashboard-list-left,
+.dashboard-list-right {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    padding: 32px 32px 24px 32px;
+    flex: 1;
+    min-width: 320px;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.dashboard-list-left {
+    flex: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.dashboard-list-right {
+    flex: 1;
+}

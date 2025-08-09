@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - National College of Science and Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/assets/css/login.css">
+</head>
+
+<body class="signup-form-page">
+    <div class="split-container">
+        <div class="split-left">
+            <div class="logo-area">
+                <img src="../../public/assets/images/logo.png" alt="Logo" class="login-logo"
+                    onerror="this.style.display='none'">
+            </div>
+            <div class="form-area">
+                <h2 class="form-title">Student Registration</h2>
+                <div class="form-subtitle">This form is for student only</div>
+                <form class="signup-form" id="signupForm" autocomplete="off">
+                    <div class="input-group">
+                        <input type="text" id="signupLastname" name="lastname" placeholder="Lastname" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="signupFirstname" name="firstname" placeholder="Firstname" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="signupMiddlename" name="middlename" placeholder="Middlename">
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="signupEmail" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="signupPassword" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="signupConfirmPassword" name="confirm_password"
+                            placeholder="Confirm Password" required>
+                    </div>
+                    <div class="signup-btn-row">
+                        <button type="submit" class="login-btn">Register</button>
+                    </div>
+                    <div class="back-link">
+                        <a href="login.html">Go back to log in form</a>
+                    </div>
+                </form>
+                <div class="toggle-link">
+                    Already have an account?
+                    <a href="login.html">Sign In</a>
+                </div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="overlay"></div>
+            <div class="right-content">
+                <h1>Join National College of Science and Technology</h1>
+                <p>The National College of Science & Technology (NCST) is a respected institution that empowers students
+                    through quality education focused on science, technology, and practical skills. It plays a vital
+                    role in shaping future professionals who are not only knowledgeable but also industry-ready and
+                    values-driven.</p>
+            </div>
+        </div>
+    </div>
+    <script src="../../public/assets/js/login.js"></script>
+</body>
+
+</html>

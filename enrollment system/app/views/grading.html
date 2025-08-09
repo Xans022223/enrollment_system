@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section List</title>
+    <link rel="stylesheet" href="../../public/assets/css/sidebar&navbar.css">
+    <link rel="stylesheet" href="../../public/assets/css/grading.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../../public/assets/images/logo.png" alt="NCST Logo" class="logo">
+                <span class="brand">NCST</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="pre-enrolled.html">Pre-Enrolled</a></li>
+                    <li><a href="section.html">Section</a></li>
+                    <li><a href="prospectus.html">Subjects</a></li>
+                    <li class="active"><a href="grading.html">Grading</a></li>
+                    <li><a href="course.html">Course</a></li>
+                    <li><a href="user.html">User</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <!-- Navbar -->
+            <header class="navbar">
+                <div class="school-year-dropdown-container">
+                    <div class="school-year" id="schoolYearBtn">
+                        <span>2025 - 2026</span>
+                        <span class="dropdown-arrow">&#9660;</span>
+                    </div>
+                    <div class="school-year-dropdown" id="schoolYearDropdown">
+                        <div class="dropdown-year">2025 - 2026</div>
+                        <div class="dropdown-year">2024 - 2025</div>
+                        <div class="dropdown-year">2023 - 2024</div>
+                        <div class="dropdown-year">2022 - 2023</div>
+                        <div class="dropdown-year">2021 - 2022</div>
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <div class="user-avatar" id="userAvatar">
+                        <span class="avatar-circle">M</span>
+                    </div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <img src="../../public/assets/images/user1.jpg" alt="Profile" class="dropdown-avatar">
+                            <div class="dropdown-info">
+                                <div class="dropdown-name">migo</div>
+                                <div class="dropdown-email">123@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="dropdown-logout">
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Grading Header -->
+            <div class="grading-header">
+                <div class="grading-title">Grading List</div>
+                <nav class="breadcrumb">
+                    <span class="breadcrumb-icon">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 10L10 4L18 10" stroke="#b0b0b0" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M4 10V16C4 16.5304 4.21071 17.0391 4.58579 17.4142C4.96086 17.7893 5.46957 18 6 18H14C14.5304 18 15.0391 17.7893 15.4142 17.4142C15.7893 17.0391 16 16.5304 16 16V10"
+                                stroke="#b0b0b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    <span class="breadcrumb-item">Dashboard</span>
+                    <span class="breadcrumb-separator">&#8250;</span>
+                    <span class="breadcrumb-current">Grading List</span>
+                </nav>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-cards" style="margin-bottom:0;"></div>
+                <div class="dashboard-lists">
+                    <div class="dashboard-list-left" style="width:100%;">
+                        <div class="list-title">Grading Table</div>
+                        <div class="list-table-wrapper">
+                            <div
+                                style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                                <div>
+                                    <label for="courseFilter">Course:</label>
+                                    <select id="courseFilter" style="margin-left:8px;padding:4px 8px;">
+                                        <option>All</option>
+                                        <option>BS-IT</option>
+                                        <option>BS-CS</option>
+                                        <option>BS-A</option>
+                                    </select>
+                                    <input type="text" placeholder="Search..."
+                                        style="margin-left:12px;padding:4px 10px;border-radius:4px;border:1px solid #ccc;max-width:200px;">
+                                </div>
+                            </div>
+                            <table class="list-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;"></th>
+                                        <th>Student ID</th>
+                                        <th>Name</th>
+                                        <th>Section</th>
+                                        <th>Course</th>
+                                        <th>Semester</th>
+                                        <th>Year Level</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="section-row">
+                                        <td class="expand-arrow-cell">
+                                            <span class="expand-arrow"
+                                                style="font-size:1.2em;vertical-align:middle;cursor:pointer;">&#9654;</span>
+                                        </td>
+                                        <td>2023-54844</td>
+                                        <td>BRENNAN APAWAN</td>
+                                        <td>IT-M1</td>
+                                        <td>BS-IT</td>
+                                        <td>1st sem</td>
+                                        <td>1st year</td>
+                                    </tr>
+                                    <tr class="subject-row" style="display:none;">
+                                        <td colspan="7">
+                                            <div class="expanded-subject-area">
+                                                <table style="width:100%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="text-align:left;">Subject</th>
+                                                            <th>Title</th>
+                                                            <th>Unit</th>
+                                                            <th>Final Grade</th>
+                                                            <th>Remark</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>INTEG</td>
+                                                            <td>INTERGRATIVE</td>
+                                                            <td>3</td>
+                                                            <td>0</td>
+                                                            <td></td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>HCI 102</td>
+                                                            <td>HUMAN COMPUTER</td>
+                                                            <td>2</td>
+                                                            <td>0</td>
+                                                            <td></td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>QUANTI III</td>
+                                                            <td>QUANTITATIVE</td>
+                                                            <td>4</td>
+                                                            <td>0</td>
+                                                            <td></td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>NET III</td>
+                                                            <td>NETWORKING</td>
+                                                            <td>1</td>
+                                                            <td>0</td>
+                                                            <td></td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="section-row">
+                                        <td class="expand-arrow-cell">
+                                            <span class="expand-arrow"
+                                                style="font-size:1.2em;vertical-align:middle;cursor:pointer;">&#9654;</span>
+                                        </td>
+                                        <td>2023-54845</td>
+                                        <td>ZANDER REY</td>
+                                        <td>CS-M1</td>
+                                        <td>BS-CS</td>
+                                        <td>1st sem</td>
+                                        <td>1st year</td>
+                                    </tr>
+                                    <tr class="subject-row" style="display:none;">
+                                        <td colspan="7">
+                                            <div class="expanded-subject-area">
+                                                <table style="width:100%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="text-align:left;">Subject</th>
+                                                            <th>Title</th>
+                                                            <th>Unit</th>
+                                                            <th>Final Grade</th>
+                                                            <th>Remark</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>MATH 101</td>
+                                                            <td>MATHEMATICS</td>
+                                                            <td>3</td>
+                                                            <td>85</td>
+                                                            <td>Passed</td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ENG 101</td>
+                                                            <td>ENGLISH</td>
+                                                            <td>3</td>
+                                                            <td>90</td>
+                                                            <td>Passed</td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table-pagination">
+                                <select class="table-pagination-select">
+                                    <option>10</option>
+                                    <option>25</option>
+                                    <option>50</option>
+                                </select>
+                                <span class="table-pagination-info">Displaying 1 - 1 of 1 records</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    </div>
+
+    <!-- Edit Grade Modal -->
+    <div id="editGradeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Grade</h2>
+                <button class="modal-close" id="closeGradeModal">&times;</button>
+            </div>
+            <form id="editGradeForm" class="grade-form">
+                <div class="form-group">
+                    <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="subjectCode">Subject Code:</label>
+                    <input type="text" id="subjectCode" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="subjectTitle">Subject Title:</label>
+                    <input type="text" id="subjectTitle" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="subjectUnit">Unit:</label>
+                    <input type="text" id="subjectUnit" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="finalGrade">*Final Grade:</label>
+                    <input type="text" id="finalGrade" name="finalGrade" placeholder="Enter grade (65-100)" required>
+                </div>
+                <div class="form-group">
+                    <label for="remark">Remark:</label>
+                    <select id="remark" name="remark">
+                        <option value="">Select remark</option>
+                        <option value="Passed">Passed</option>
+                        <option value="Failed">Failed</option>
+                        <option value="Incomplete">Incomplete</option>
+                        <option value="Dropped">Dropped</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelGradeBtn" class="btn-back">Cancel</button>
+                    <button type="submit" id="saveGradeBtn" class="btn-submit">Save Grade</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Modal for Errors/Success -->
+    <div id="notificationModal" class="notification-modal">
+        <div class="notification-content">
+            <div class="notification-text">
+                <p id="notificationMessage">Message</p>
+            </div>
+            <div class="notification-actions">
+                <button id="notificationConfirmBtn" class="btn-confirm">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../public/assets/js/grading.js"></script>
+</body>
+
+</html>

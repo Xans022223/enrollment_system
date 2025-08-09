@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../../public/assets/css/dashboard.css">
+    <link rel="stylesheet" href="../../public/assets/css/prospectus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../../public/assets/images/logo.png" alt="NCST Logo" class="logo">
+                <span class="brand">NCST</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="pre-enrolled.html">Pre-Enrolled</a></li>
+                    <li><a href="section.html">Section</a></li>
+                    <li class="active"><a href="prospectus.html">Subjects</a></li>
+                    <li><a href="grading.html">Grading</a></li>
+                    <li><a href="course.html">Course</a></li>
+                    <li><a href="user.html">User</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Navbar -->
+            <header class="navbar">
+                <div class="school-year-dropdown-container">
+                    <div class="school-year" id="schoolYearBtn">
+                        <span>2025 - 2026</span>
+                        <span class="dropdown-arrow">&#9660;</span>
+                    </div>
+                    <div class="school-year-dropdown" id="schoolYearDropdown">
+                        <div class="dropdown-year">2025 - 2026</div>
+                        <div class="dropdown-year">2024 - 2025</div>
+                        <div class="dropdown-year">2023 - 2024</div>
+                        <div class="dropdown-year">2022 - 2023</div>
+                        <div class="dropdown-year">2021 - 2022</div>
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <div class="user-avatar" id="userAvatar">
+                        <span class="avatar-circle">M</span>
+                    </div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <img src="../../public/assets/images/user1.jpg" alt="Profile" class="dropdown-avatar">
+                            <div class="dropdown-info">
+                                <div class="dropdown-name">migo</div>
+                                <div class="dropdown-email">123@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="dropdown-logout">
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Breadcrumb Section -->
+            <div class="breadcrumb-bar"
+                style="display: flex; align-items: center; justify-content: center; gap: 10px; margin: 32px 0 18px 0; font-size: 1.2rem; color: #b0b0b0;">
+                <span style="font-weight: 600; color: #23243a; font-size: 1.35rem;">Courses</span>
+                <svg style="width: 22px; height: 22px; vertical-align: middle; color: #b0b0b0;" fill="none"
+                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span style="color: #b0b0b0;">&#8250;</span>
+                <span style="color: #b0b0b0;">Dashboard</span>
+                <span style="color: #b0b0b0;">&#8250;</span>
+                <span style="color: #b0b0b0;">Course List</span>
+            </div>
+            <!-- Begin Courses Table Section -->
+            <div class="prospectus-content">
+                <div class="prospectus-header"
+                    style="display: flex; align-items: center; gap: 18px; margin-bottom: 18px;">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: #444;">Courses</span>
+                    <nav class="breadcrumb"
+                        style="display: flex; align-items: center; font-size: 1rem; color: #b0b0b0; font-weight: 500;">
+                    </nav>
+                </div>
+                <div class="prospectus-body" style="align-items: flex-start;">
+                    <div class="prospectus-courses">
+                        <div class="prospectus-courses-list">
+                            <div class="prospectus-courses-title">COLLEGE COURSE</div>
+                            <div class="prospectus-course-item"><span class="course-icon"></span>BS-IT</div>
+                            <div class="prospectus-course-item"><span class="course-icon"></span>BS-CS</div>
+                        </div>
+                        <div class="prospectus-table-section">
+                            <div class="prospectus-table-header">
+                                <span class="prospectus-table-title">BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY - 1st
+                                    Year - 1st Sem</span>
+                                <div class="prospectus-header-actions">
+                                    <button class="prospectus-settings-btn" id="settingsBtn"
+                                        title="Settings">⚙️</button>
+                                    <button class="prospectus-new-subject-btn">New Subject</button>
+                                </div>
+                            </div>
+                            <table class="prospectus-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Title</th>
+                                        <th>Unit</th>
+                                        <th>Pre-Requisite</th>
+                                        <th>Room</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>sia</td>
+                                        <td>system integ</td>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td>1108</td>
+                                        <td>
+                                            <button class="action-btn" title="Edit">&#9998;</button>
+                                            <button class="action-btn" title="Delete">&#128465;</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>network 101 </td>
+                                        <td>netwe 1</td>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td>1109</td>
+                                        <td>
+                                            <button class="action-btn" title="Edit">&#9998;</button>
+                                            <button class="action-btn" title="Delete">&#128465;</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>sia 111</td>
+                                        <td>test sub 1</td>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td>1107</td>
+                                        <td>
+                                            <button class="action-btn" title="Edit">&#9998;</button>
+                                            <button class="action-btn" title="Delete">&#128465;</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>sia 111</td>
+                                        <td>test subject</td>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td>4201</td>
+                                        <td>
+                                            <button class="action-btn" title="Edit">&#9998;</button>
+                                            <button class="action-btn" title="Delete">&#128465;</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <div id="confirmDeleteModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message">Are you sure you want to delete this section?</div>
+            <button id="confirmDeleteYes" class="modal-delete-btn">Yes, Delete</button>
+            <button id="confirmDeleteCancel" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message">Are you sure you want to logout?</div>
+            <button id="logoutYesBtn" class="modal-delete-btn">Yes, Logout</button>
+            <button id="logoutCancelBtn" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-box">
+            <div id="successModalMsg" class="modal-message"></div>
+            <button id="successModalOk" class="modal-ok-btn">OK</button>
+        </div>
+    </div>
+
+    <!-- New Subject Modal -->
+    <div id="newSubjectModal" class="modal-overlay">
+        <div class="modal-box new-subject-modal">
+            <div class="modal-header">
+                <h3>Add New Subject</h3>
+                <button class="modal-close-btn" id="closeNewSubjectModal">&times;</button>
+            </div>
+            <form id="newSubjectForm" class="modal-form">
+                <div class="form-group">
+                    <label for="subjectCode">Subject Code</label>
+                    <input type="text" id="subjectCode" name="subjectCode" required placeholder="e.g., IT 101">
+                </div>
+                <div class="form-group">
+                    <label for="subjectTitle">Subject Title</label>
+                    <input type="text" id="subjectTitle" name="subjectTitle" required
+                        placeholder="e.g., Introduction to IT">
+                </div>
+                <div class="form-group">
+                    <label for="subjectUnit">Units</label>
+                    <input type="number" id="subjectUnit" name="subjectUnit" placeholder="e.g., 3">
+                </div>
+                <div class="form-group">
+                    <label for="subjectPrerequisite">Pre-Requisite</label>
+                    <input type="text" id="subjectPrerequisite" name="subjectPrerequisite"
+                        placeholder="Leave empty if none">
+                </div>
+                <div class="form-group">
+                    <label for="subjectRoom">Room</label>
+                    <input type="text" id="subjectRoom" name="subjectRoom" required placeholder="e.g., 101">
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelNewSubject" class="modal-cancel-btn">Cancel</button>
+                    <button type="submit" class="modal-submit-btn">Add Subject</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Settings Modal to pagod na ako -->
+    <div id="settingsModal" class="modal-overlay">
+        <div class="modal-box settings-modal">
+            <div class="modal-header">
+                <h3>Course Settings</h3>
+                <button class="modal-close-btn" id="closeSettingsModal">&times;</button>
+            </div>
+            <div class="settings-content">
+                <div class="settings-section">
+                    <h4>1ST YEAR</h4>
+                    <div class="settings-option">
+                        <label class="radio-label">
+                            <input type="radio" name="year" value="1st-year-1st-sem" checked>
+                            <span class="radio-custom"></span>
+                            1st Sem
+                        </label>
+                    </div>
+                    <div class="settings-option">
+                        <label class="radio-label">
+                            <input type="radio" name="year" value="1st-year-2nd-sem">
+                            <span class="radio-custom"></span>
+                            2nd Sem
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h4>2ND YEAR</h4>
+                    <div class="settings-option">
+                        <label class="radio-label">
+                            <input type="radio" name="year" value="2nd-year-1st-sem">
+                            <span class="radio-custom"></span>
+                            1st Sem
+                        </label>
+                    </div>
+                    <div class="settings-option">
+                        <label class="radio-label">
+                            <input type="radio" name="year" value="2nd-year-2nd-sem">
+                            <span class="radio-custom"></span>
+                            2nd Sem
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h4>3RD YEAR</h4>
+                    <div class="settings-option">
+                        <label class="radio-label">
+                            <input type="radio" name="year" value="3rd-year-1st-sem">
+                            <span class="radio-custom"></span>
+                            1st Sem
+                        </label>
+                    </div>
+                    <div class="settings-option">
+                        <label class="radio-label">
+                            <input type="radio" name="year" value="3rd-year-2nd-sem">
+                            <span class="radio-custom"></span>
+                            2nd Sem
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h4>4TH YEAR</h4>
+                    <div class="settings-option">
+                        <label class="radio-label">
+                            <input type="radio" name="year" value="4th-year-1st-sem">
+                            <span class="radio-custom"></span>
+                            1st Sem
+                        </label>
+                    </div>
+                    <div class="settings-option">
+                        <label class="radio-label">
+                            <input type="radio" name="year" value="4th-year-2nd-sem">
+                            <span class="radio-custom"></span>
+                            2nd Sem
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-actions">
+                <button type="button" id="cancelSettings" class="modal-cancel-btn">Cancel</button>
+                <button type="button" id="applySettings" class="modal-submit-btn">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../public/assets/js/prospectus.js"></script>
+</body>
+
+</html>

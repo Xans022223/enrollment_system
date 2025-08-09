@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section List</title>
+    <link rel="stylesheet" href="../../public/assets/css/section.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../../public/assets/images/logo.png" alt="NCST Logo" class="logo">
+                <span class="brand">NCST</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="pre-enrolled.html">Pre-Enrolled</a></li>
+                    <li class="active"><a href="section.html">Section</a></li>
+                    <li><a href="prospectus.html">Subjects</a></li>
+                    <li><a href="grading.html">Grading</a></li>
+                    <li><a href="course.html">Course</a></li>
+                    <li><a href="user.html">User</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <!-- Navbar -->
+            <header class="navbar">
+                <div class="school-year-dropdown-container">
+                    <div class="school-year" id="schoolYearBtn">
+                        <span>2025 - 2026</span>
+                        <span class="dropdown-arrow">&#9660;</span>
+                    </div>
+                    <div class="school-year-dropdown" id="schoolYearDropdown">
+                        <div class="dropdown-year">2025 - 2026</div>
+                        <div class="dropdown-year">2024 - 2025</div>
+                        <div class="dropdown-year">2023 - 2024</div>
+                        <div class="dropdown-year">2022 - 2023</div>
+                        <div class="dropdown-year">2021 - 2022</div>
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <div class="user-avatar" id="userAvatar">
+                        <span class="avatar-circle">M</span>
+                    </div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <img src="../../public/assets/images/user1.jpg" alt="Profile" class="dropdown-avatar">
+                            <div class="dropdown-info">
+                                <div class="dropdown-name">migo</div>
+                                <div class="dropdown-email">123@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="dropdown-logout">
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- eto yung content ng section drop down -->
+            <div class="dashboard-content">
+                <h2 class="dashboard-title">Section List</h2>
+                <nav style="font-size:0.95em;color:#888;margin-bottom:18px;">
+                    <span>Dashboard</span> &gt; <span>Section List</span>
+                </nav>
+                <div class="dashboard-cards" style="margin-bottom:0;"></div>
+                <div class="dashboard-lists">
+                    <div class="dashboard-list-left" style="width:100%;">
+                        <div class="list-title">Section Table</div>
+                        <div class="list-table-wrapper">
+                            <div
+                                style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                                <div>
+                                    <label for="courseFilter">Course:</label>
+                                    <select id="courseFilter" style="margin-left:8px;padding:4px 8px;">
+                                        <option>All</option>
+                                        <option>BS-IT</option>
+                                        <option>BS-Computer Science</option>
+                                        <option>BS-Architecture</option>
+                                    </select>
+                                    <input type="text" placeholder="Search..."
+                                        style="margin-left:12px;padding:4px 10px;border-radius:4px;border:1px solid #ccc;max-width:200px;">
+                                </div>
+                                <button
+                                    style="padding:8px 22px;background:#2d82f1;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:500;box-shadow:0 2px 8px rgba(45,130,241,0.08);"
+                                    id="newSectionBtn">+ New Section</button>
+                            </div>
+                            <table class="list-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;"></th>
+                                        <th>Section</th>
+                                        <th>Course</th>
+                                        <th>Semester</th>
+                                        <th>Year Level</th>
+                                        <th>Subject Count</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="section-row">
+                                        <td class="expand-arrow-cell">
+                                            <span class="expand-arrow"
+                                                style="font-size:1.2em;vertical-align:middle;cursor:pointer;">&#9654;</span>
+                                        </td>
+                                        <td>IT-1A</td>
+                                        <td>BS-IT</td>
+                                        <td>1st Sem</td>
+                                        <td>1st Year</td>
+                                        <td>4</td>
+                                        <td>
+                                            <button class="action-btn" title="Edit">&#9998;</button>
+                                            <button class="action-btn" title="Delete">&#128465;</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="subject-row" style="display:none;">
+                                        <td colspan="7">
+                                            <div class="expanded-subject-area">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="text-align:left;">Subject</th>
+                                                            <th>Mo</th>
+                                                            <th>Tu</th>
+                                                            <th>We</th>
+                                                            <th>Th</th>
+                                                            <th>Fr</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>SIA 101</td>
+                                                            <td>12:00 AM - 1:00 AM</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>HCI 102</td>
+                                                            <td></td>
+                                                            <td>8:00 AM - 9:00 AM</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>QUANTI III</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>10:00 AM - 11:00 AM</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>NETWORKING III</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>2:00 PM - 3:00 PM</td>
+                                                            <td></td>
+                                                            <td><button class="action-btn" title="Edit">&#9998;</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table-pagination">
+                                <select class="table-pagination-select">
+                                    <option>10</option>
+                                    <option>25</option>
+                                    <option>50</option>
+                                </select>
+                                <span class="table-pagination-info">Displaying 1 - 1 of 1 records</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="editModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message" style="font-weight:600;">Edit Section Info</div>
+            <form id="editForm">
+                <div class="modal-form-group">
+                    <label for="editSectionName">Section</label>
+                    <input type="text" id="editSectionName" name="sectionName" required />
+                </div>
+                <div class="modal-form-group">
+                    <label for="editCourse">Course</label>
+                    <input type="text" id="editCourse" name="course" required />
+                </div>
+                <div class="modal-form-group">
+                    <label for="editSemester">Semester</label>
+                    <input type="text" id="editSemester" name="semester" required />
+                </div>
+                <div class="modal-form-group">
+                    <label for="editYearLevel">Year Level</label>
+                    <input type="text" id="editYearLevel" name="yearLevel" required />
+                </div>
+                <div class="modal-form-group">
+                    <label for="editSubjectCount">Subject Count</label>
+                    <input type="text" id="editSubjectCount" name="subjectCount" required />
+                </div>
+                <button type="submit" class="modal-save-btn">Save</button>
+                <button type="button" id="editCancelBtn" class="modal-cancel-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <!-- Add Section Modal -->
+    <div id="addSectionModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message" style="font-weight:600;">Subject Maintenance</div>
+            <form id="addSectionForm">
+                <div style="display: flex; gap: 24px;">
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 18px;">
+                        <label for="addCourse">Course *</label>
+                        <select id="addCourse" name="course" required>
+                            <option value="">Please put course</option>
+                            <option value="BS-IT">BS-IT</option>
+                            <option value="BS-Computer Science">BS-Computer Science</option>
+                            <option value="BS-Architecture">BS-Architecture</option>
+                        </select>
+                        <span style="font-size: 0.9em; color: #aaa; margin-top: 2px;">Please put course</span>
+                    </div>
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 18px;">
+                        <label for="addYearLevel">Year Level *</label>
+                        <select id="addYearLevel" name="yearLevel" required>
+                            <option value="">Please put year level</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                        <span style="font-size: 0.9em; color: #aaa; margin-top: 2px;">Please put year level</span>
+                    </div>
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 18px;">
+                        <label for="addSemester">Semester *</label>
+                        <select id="addSemester" name="semester" required>
+                            <option value="">-- select an semester --</option>
+                            <option value="1st Sem">1st Sem</option>
+                            <option value="2nd Sem">2nd Sem</option>
+                            <option value="Summer">Summer</option>
+                        </select>
+                        <span style="font-size: 0.9em; color: #aaa; margin-top: 2px;">Please put semester</span>
+                    </div>
+                </div>
+                <div style="margin-top: 24px;">
+                    <label for="addSectionName">Section *</label>
+                    <input type="text" id="addSectionName" name="sectionName" placeholder="SECTION NAME" required
+                        style="width: 100%;" />
+                    <span style="font-size: 0.9em; color: #aaa; margin-top: 2px;">Please put section name</span>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 32px;">
+                    <button type="button" id="addSectionCancelBtn" class="modal-cancel-btn">Close</button>
+                    <button type="submit" class="modal-save-btn">Add Section</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Confirm Delete Modal -->
+    <div id="confirmDeleteModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message">Are you sure you want to delete this section?</div>
+            <button id="confirmDeleteYes" class="modal-delete-btn">Yes, Delete</button>
+            <button id="confirmDeleteCancel" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+    <!-- logout Modal -->
+    <div id="logoutModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-message">Are you sure you want to logout?</div>
+            <button id="logoutYesBtn" class="modal-delete-btn">Yes, Logout</button>
+            <button id="logoutCancelBtn" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+    <!-- view -->
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-box">
+            <div id="successModalMsg" class="modal-message"></div>
+            <button id="successModalOk" class="modal-ok-btn">OK</button>
+        </div>
+    </div>
+    <!-- Schedule Maintenance Modal -->
+    <div id="scheduleModal" class="modal-overlay">
+        <div class="modal-box" style="max-width:600px;">
+            <div class="modal-message" style="font-weight:600;">Schedule Maintenance</div>
+            <form id="scheduleForm">
+                <div class="modal-form-group">
+                    <label for="scheduleTeacher">Teacher *</label>
+                    <input type="text" id="scheduleTeacher" name="teacher" required />
+                </div>
+                <div class="modal-form-group">
+                    <label><input type="checkbox" name="monday" class="schedule-day"> Monday</label>
+                    <input type="time" name="monday_from" class="schedule-from" disabled>
+                    <input type="time" name="monday_to" class="schedule-to" disabled>
+                </div>
+                <div class="modal-form-group">
+                    <label><input type="checkbox" name="tuesday" class="schedule-day"> Tuesday</label>
+                    <input type="time" name="tuesday_from" class="schedule-from" disabled>
+                    <input type="time" name="tuesday_to" class="schedule-to" disabled>
+                </div>
+                <div class="modal-form-group">
+                    <label><input type="checkbox" name="wednesday" class="schedule-day"> Wednesday</label>
+                    <input type="time" name="wednesday_from" class="schedule-from" disabled>
+                    <input type="time" name="wednesday_to" class="schedule-to" disabled>
+                </div>
+                <div class="modal-form-group">
+                    <label><input type="checkbox" name="thursday" class="schedule-day"> Thursday</label>
+                    <input type="time" name="thursday_from" class="schedule-from" disabled>
+                    <input type="time" name="thursday_to" class="schedule-to" disabled>
+                </div>
+                <div class="modal-form-group">
+                    <label><input type="checkbox" name="friday" class="schedule-day"> Friday</label>
+                    <input type="time" name="friday_from" class="schedule-from" disabled>
+                    <input type="time" name="friday_to" class="schedule-to" disabled>
+                </div>
+                <div style="display:flex;justify-content:flex-end;gap:10px;">
+                    <button type="button" id="scheduleCancelBtn" class="modal-cancel-btn">Cancel</button>
+                    <button type="submit" class="modal-save-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../../public/assets/js/section.js"></script>
+</body>
+
+</html>

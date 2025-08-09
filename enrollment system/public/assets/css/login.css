@@ -1,0 +1,418 @@
+body {
+    background: #ececec;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+.split-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    min-height: 600px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.split-left {
+    background: #fff;
+    color: #222;
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.login-logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+.form-area {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #bdbdbd;
+    background: transparent;
+    padding: 12px 0 8px 0;
+    font-size: 1rem;
+    color: #222;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.login-form input[type="email"]::placeholder,
+.login-form input[type="password"]::placeholder {
+    color: #bdbdbd;
+    opacity: 1;
+}
+
+
+
+.form-links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.forgot-password {
+    color: #bdbdbd;
+    font-size: 0.98rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: #222;
+}
+
+.login-btn {
+    background: #2473e9;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 13px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(60, 72, 88, 0.08);
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #2448e9;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(60, 72, 88, 0.13);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* Right Panel */
+.split-right {
+    flex: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('../images/logo.png') center center/cover no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(43, 107, 243, 0.85);
+    z-index: 1;
+}
+
+.right-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: left;
+    max-width: 600px;
+    margin-left: 40px;
+}
+
+.right-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+
+.right-content p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+/* Toggle link for switching forms */
+.toggle-link {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
+}
+
+.toggle-link a {
+    color: #2d82f1;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 6px;
+    transition: color 0.2s;
+}
+
+.toggle-link a:hover {
+    color: #222;
+}
+
+.signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.signup-form .login-btn {
+    margin-top: 10px;
+}
+
+body.signup-form-page .form-area {
+    max-width: 400px;
+    margin: 0 auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body.signup-form-page .form-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+body.signup-form-page .form-subtitle {
+    font-size: 1.05rem;
+    color: #b0b0b0;
+    margin-bottom: 28px;
+    text-align: center;
+    font-weight: 400;
+}
+
+body.signup-form-page .signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: stretch;
+}
+
+body.signup-form-page .signup-form .input-group {
+    margin-bottom: 0;
+}
+
+body.signup-form-page .signup-form input[type="text"],
+body.signup-form-page .signup-form input[type="email"],
+body.signup-form-page .signup-form input[type="password"] {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #bdbdbd;
+    background: transparent;
+    padding: 12px 0 8px 0;
+    font-size: 1rem;
+    color: #222;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 0;
+}
+
+body.signup-form-page .signup-form input[type="text"]::placeholder,
+body.signup-form-page .signup-form input[type="email"]::placeholder,
+body.signup-form-page .signup-form input[type="password"]::placeholder {
+    color: #bdbdbd;
+    opacity: 1;
+}
+
+
+body.signup-form-page .signup-btn-row {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+body.signup-form-page .login-btn,
+body.signup-form-page .cancel-btn {
+    min-width: 140px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 13px 38px;
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(60, 72, 88, 0.08);
+    line-height: 1.1;
+    display: inline-block;
+    vertical-align: middle;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+    font-family: inherit;
+}
+
+body.signup-form-page .login-btn {
+    background: #2473e9;
+    color: #fff;
+}
+
+body.signup-form-page .login-btn:hover {
+    background: #2448e9;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+}
+
+body.signup-form-page .toggle-link {
+    display: none;
+}
+
+.back-link {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #2d82f1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.back-link a:hover {
+    color: #2448e9;
+    text-decoration: underline;
+}
+
+/* Fix for single button in forgot password form */
+#forgotForm .signup-btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-top: 18px;
+}
+
+#forgotForm .login-btn {
+    min-width: 180px;
+    padding: 13px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(60, 72, 88, 0.08);
+    background: #2473e9;
+    color: #fff;
+    border: none;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+#forgotForm .login-btn:hover {
+    background: #2448e9;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 900px) {
+    .split-container {
+        flex-direction: column;
+        min-height: unset;
+        width: 100vw;
+        height: auto;
+    }
+
+    .split-left,
+    .split-right {
+        min-height: 320px;
+        padding: 32px 8vw;
+    }
+
+    .right-content {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .toggle-link {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .split-container {
+        border-radius: 0;
+        box-shadow: none;
+        min-height: unset;
+        height: auto;
+    }
+
+    .split-left,
+    .split-right {
+        padding: 18px 2vw;
+    }
+
+    .login-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .form-title {
+        font-size: 1.1rem;
+    }
+
+    .right-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .right-content p {
+        font-size: 0.95rem;
+    }
+
+    .toggle-link {
+        font-size: 0.95rem;
+        margin-top: 18px;
+    }
+}

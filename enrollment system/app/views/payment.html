@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Management</title>
+    <link rel="stylesheet" href="../../public/assets/css/payment.css">
+    <link rel="stylesheet" href="../../public/assets/css/sidebar&navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../../public/assets/images/logo.png" alt="NCST Logo" class="logo">
+                <span class="brand">NCST</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="registration.html">Registration</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li class="active"><a href="payment.html">Payment</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Navbar -->
+            <header class="navbar">
+                <div class="school-year-dropdown-container">
+                </div>
+                <div class="navbar-right">
+                    <div class="user-avatar" id="userAvatar">
+                        <span class="avatar-circle">M</span>
+                    </div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <img src="../../public/assets/images/user1.jpg" alt="Profile" class="dropdown-avatar">
+                            <div class="dropdown-info">
+                                <div class="dropdown-name">migo</div>
+                                <div class="dropdown-email">123@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="dropdown-logout">
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Payment Content -->
+            <div class="payment-content">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">
+                    <h1>Payment Management</h1>
+                    <div class="breadcrumb-nav">
+                        <span>Dashboard</span>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Payment Management</span>
+                    </div>
+                </div>
+
+
+
+                <!-- Filter and Search Bar -->
+                <div class="filter-search-bar">
+                    <div class="filter-section">
+                        <label for="paymentStatusFilter">Status:</label>
+                        <select id="paymentStatusFilter" class="status-dropdown">
+                            <option value="All">All Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Paid">Paid</option>
+                        </select>
+                    </div>
+                    <div class="search-section">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search by student name or ID..." id="searchInput">
+                        </div>
+                    </div>
+                    <div class="action-section">
+                        <button class="new-payment-btn" id="newPaymentBtn">
+                            <i class="fas fa-plus"></i>
+                            New Payment
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Payment Table Card -->
+                <div class="payment-card">
+                    <div class="card-header">
+                        <h2>Payment Records</h2>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="table-container">
+                        <table class="payment-table">
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Payment Type</th>
+                                    <th>Amount</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paymentTableBody">
+                                <tr>
+                                    <td>2021-001</td>
+                                    <td>koy manampan</td>
+                                    <td>Tuition Fee</td>
+                                    <td>₱25,000</td>
+                                    <td>2025-01-15</td>
+                                    <td><span class="status-badge status-paid">Paid</span></td>
+                                    <td>
+                                        <button class="action-btn" title="Edit"
+                                            onclick="editPayment(this)">&#9998;</button>
+                                        <button class="action-btn" title="Delete"
+                                            onclick="deletePayment(this)">&#128465;</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </main>
+    </div>
+
+    <!-- Payment Form Modal -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="modalTitle">New Payment</h2>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="modal-content">
+                <form id="paymentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentId">Student ID *</label>
+                            <input type="text" id="studentId" name="studentId" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentName">Student Name *</label>
+                            <input type="text" id="studentName" name="studentName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="paymentType">Payment Type *</label>
+                            <select id="paymentType" name="paymentType" required>
+                                <option value="">Select payment type</option>
+                                <option value="Tuition Fee">Tuition Fee</option>
+                                <option value="Laboratory Fee">Laboratory Fee</option>
+                                <option value="Library Fee">Library Fee</option>
+                                <option value="Medical Fee">Medical Fee</option>
+                                <option value="Athletic Fee">Athletic Fee</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount (₱) *</label>
+                            <input type="number" id="amount" name="amount" min="0" step="0.01" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dueDate">Due Date *</label>
+                            <input type="date" id="dueDate" name="dueDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentStatus">Status *</label>
+                            <select id="paymentStatus" name="paymentStatus" required>
+                                <option value="">Select status</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Paid">Paid</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="3"
+                            placeholder="Enter payment description..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel" id="cancelBtn">Cancel</button>
+                        <button type="submit" class="btn-submit" id="submitBtn">Save Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Payment Modal -->
+    <div class="modal-overlay" id="viewPaymentModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Payment Details</h2>
+                <button class="modal-close" id="closeViewModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="modal-content">
+                <div class="payment-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Student ID:</span>
+                        <span class="detail-value" id="viewStudentId">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Student Name:</span>
+                        <span class="detail-value" id="viewStudentName">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Payment Type:</span>
+                        <span class="detail-value" id="viewPaymentType">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Amount:</span>
+                        <span class="detail-value" id="viewAmount">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Due Date:</span>
+                        <span class="detail-value" id="viewDueDate">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value" id="viewStatus">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Description:</span>
+                        <span class="detail-value" id="viewDescription">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal-overlay" id="successModal">
+        <div class="success-modal-container">
+            <div class="success-modal-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="success-message" id="successMessage">Payment saved successfully!</div>
+                <button class="success-close-btn" id="successCloseBtn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal-box">
+            <div class="modal-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Are you sure you want to delete this payment record?</p>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-delete-btn" id="confirmDeleteBtn">Delete</button>
+                <button class="modal-cancel-btn" id="cancelDeleteBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="modal-overlay" id="logoutModal">
+        <div class="modal-box">
+            <div class="modal-message">Are you sure you want to logout?</div>
+            <button id="logoutYesBtn" class="modal-delete-btn">Yes, Logout</button>
+            <button id="logoutCancelBtn" class="modal-cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="../../public/assets/js/payment.js"></script>
+</body>
+
+</html>

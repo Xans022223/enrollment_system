@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule List</title>
+    <link rel="stylesheet" href="../../public/assets/css/schedule.css">
+    <link rel="stylesheet" href="../../public/assets/css/sidebar&navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../../public/assets/images/logo.png" alt="NCST Logo" class="logo">
+                <span class="brand">NCST</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="registration.html">Registration</a></li>
+                    <li class="active"><a href="schedule.html">Schedule</a></li>
+                    <li><a href="payment.html">Payment</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Navbar -->
+            <header class="navbar">
+                <div class="school-year-dropdown-container">
+                </div>
+                <div class="navbar-right">
+                    <div class="user-avatar" id="userAvatar">
+                        <span class="avatar-circle">M</span>
+                    </div>
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="dropdown-header">
+                            <img src="../../public/assets/images/user1.jpg" alt="Profile" class="dropdown-avatar">
+                            <div class="dropdown-info">
+                                <div class="dropdown-name">migo</div>
+                                <div class="dropdown-email">123@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="dropdown-logout">
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <div class="content-wrapper">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Schedule List</h1>
+                    <nav class="breadcrumb">
+                        <a href="dashboard.html" class="breadcrumb-link">Dashboard</a>
+                        <span class="breadcrumb-separator">></span>
+                        <span class="breadcrumb-current">Schedule List</span>
+                    </nav>
+                </div>
+
+                <!-- Schedule Table Section -->
+                <div class="schedule-section">
+                    <h2 class="section-title">Schedule Table</h2>
+
+                    <!-- Filters -->
+                    <div class="filters">
+                        <div class="filter-item">
+                            <label for="courseFilter">Course:</label>
+                            <select id="courseFilter" class="filter-select">
+                                <option value="all">All</option>
+                                <option value="ce">CE</option>
+                                <option value="cs">CS</option>
+                                <option value="it">IT</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Schedule Table -->
+                    <div class="table-container">
+                        <table class="schedule-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Section</th>
+                                    <th>Course</th>
+                                    <th>Semester</th>
+                                    <th>Year Level</th>
+                                    <th>Subject Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="schedule-row">
+                                    <td class="dropdown-arrow"><span class="arrow-icon">&#9654;</span></td>
+                                    <td>CE A1</td>
+                                    <td>CE</td>
+                                    <td>1st sem</td>
+                                    <td>1st year</td>
+                                    <td>1</td>
+                                </tr>
+                                <!-- Expandable content row (hidden by default) -->
+                                <tr class="expand-row" style="display: none;">
+                                    <td colspan="6">
+                                        <div class="expand-details">
+                                            <table class="subject-schedule-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Subject</th>
+                                                        <th>Mo</th>
+                                                        <th>Tu</th>
+                                                        <th>We</th>
+                                                        <th>Th</th>
+                                                        <th>Fr</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>FIL 103</td>
+                                                        <td>9:00 AM - 12:00 PM</td>
+                                                        <td>9:00 AM - 12:00 PM</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Additional rows can be added here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Table Footer -->
+                    <div class="table-footer">
+                        <div class="records-info">
+                            <span>Displaying 1 - 1 of 1 records</span>
+                        </div>
+                        <div class="pagination">
+                            <span>10</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../../public/assets/js/schedule.js"></script>
+</body>
+
+</html>

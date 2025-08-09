@@ -1,0 +1,1038 @@
+/* Registration Page Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+/* Registration Content */
+.registration-content {
+    flex: 1;
+    padding: 20px;
+    margin-top: 60px;
+    /* Space for navbar */
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 20px;
+}
+
+.breadcrumb h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumb-nav i {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Registration Card */
+.registration-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Filter and Search Bar */
+.filter-search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    gap: 20px;
+}
+
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-section label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.course-dropdown {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    min-width: 120px;
+}
+
+.course-dropdown:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.search-section {
+    flex: 1;
+    max-width: 300px;
+}
+
+.search-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input i {
+    position: absolute;
+    left: 12px;
+    color: #999;
+    font-size: 14px;
+}
+
+.search-input input {
+    width: 100%;
+    padding: 8px 12px 8px 35px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-input input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.action-section {
+    display: flex;
+    align-items: center;
+}
+
+.new-registration-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background: #2d82f1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(45, 130, 241, 0.08);
+}
+
+.new-registration-btn:hover {
+    background: #1a5fb4;
+}
+
+.new-registration-btn i {
+    font-size: 12px;
+}
+
+.flex-spacer {
+    flex: 1;
+}
+
+/* Table Container */
+.table-container {
+    position: relative;
+    min-height: 400px;
+}
+
+/* Registration Table */
+.registration-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.registration-table thead {
+    background-color: #f8f9fa;
+}
+
+.registration-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.registration-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.registration-table th.sortable:hover {
+    background-color: #e9ecef;
+}
+
+.registration-table th.sortable i {
+    margin-left: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.registration-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.registration-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* No Records */
+.no-records {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.no-records.hidden {
+    display: none;
+}
+
+/* Pagination Section */
+.pagination-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background-color: #f8f9fa;
+}
+
+.records-per-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.records-per-page label {
+    font-size: 14px;
+    color: #666;
+}
+
+.records-per-page select {
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+}
+
+.records-per-page select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-enrolled {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-pending {
+    background: none !important;
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+.status-rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 6px;
+    background: #f5f6fa;
+    border: none;
+    margin-right: 6px;
+    font-size: 1.1em;
+    color: #888;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+    outline: none;
+    overflow: visible;
+}
+
+.action-btn:last-child {
+    margin-right: 0;
+}
+
+.action-btn:hover {
+    background: #2d82f1;
+    color: #fff;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-container {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.modal-close:hover {
+    background-color: #f5f5f5;
+}
+
+.modal-content {
+    display: flex;
+    min-height: 500px;
+}
+
+/* Form Section */
+.form-section {
+    flex: 2;
+    padding: 30px;
+    border-right: 1px solid #eee;
+}
+
+.form-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+.progress-step.active .step-icon {
+    background-color: #20c997;
+    color: white;
+}
+
+.progress-step.completed .step-icon {
+    background-color: #28a745;
+    color: white;
+}
+
+.step-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+    transition: color 0.2s;
+}
+
+.progress-step.active .step-label {
+    color: #20c997;
+    font-weight: 600;
+}
+
+.progress-step.completed .step-label {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.progress-line {
+    flex: 1;
+    height: 4px;
+    background-color: #e9ecef;
+    margin: 0 10px;
+    position: relative;
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
+.progress-line.completed {
+    background-color: #28a745;
+}
+
+/* Form Content */
+.form-section-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Subject Table */
+.subject-table-container {
+    margin-top: 20px;
+}
+
+.subject-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.subject-table thead {
+    background-color: #f8f9fa;
+}
+
+.subject-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.subject-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.subject-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.subject-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Form Actions */
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+    background: #5a6268;
+}
+
+.back-btn i {
+    font-size: 12px;
+}
+
+.continue-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #fd7e14;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.continue-btn:hover {
+    background: #e8690b;
+}
+
+.continue-btn i {
+    font-size: 12px;
+}
+
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn i {
+    font-size: 12px;
+}
+
+/* --- Consistent Button Styles (from user, course, grading, section, dashboard) --- */
+
+/* Table Action Buttons */
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 6px;
+    background: #f5f6fa;
+    border: none;
+    margin-right: 6px;
+    font-size: 1.1em;
+    color: #888;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+    outline: none;
+    overflow: visible;
+}
+
+.action-btn:last-child {
+    margin-right: 0;
+}
+
+.action-btn:hover {
+    background: #2d82f1;
+    color: #fff;
+}
+
+/* Modal/Form Buttons */
+.btn-back,
+.btn-continue,
+.btn-submit {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-back {
+    background: #f5f6fa;
+    color: #23243a;
+}
+
+.btn-back:hover {
+    background: #e8e9eb;
+}
+
+.btn-continue {
+    background: #2d82f1;
+    color: white;
+}
+
+.btn-continue:hover {
+    background: #1a5fb4;
+    transform: translateY(-1px);
+}
+
+.btn-submit {
+    background: #20c997;
+    color: white;
+}
+
+.btn-submit:hover {
+    background: #1ba085;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(32, 201, 151, 0.3);
+}
+
+/* Information Panel */
+.info-panel {
+    flex: 1;
+    padding: 30px;
+    background-color: #f8f9fa;
+}
+
+.info-section {
+    margin-bottom: 25px;
+}
+
+.info-section h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.info-section p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.info-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-section li {
+    font-size: 13px;
+    color: #666;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 15px;
+}
+
+.info-section li:before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-search-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .search-section {
+        max-width: none;
+    }
+
+    .pagination-section {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .registration-table {
+        font-size: 12px;
+    }
+
+    .registration-table th,
+    .registration-table td {
+        padding: 8px 12px;
+    }
+
+    .modal-content {
+        flex-direction: column;
+    }
+
+    .form-section {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .progress-indicator {
+        justify-content: center;
+    }
+}
+
+/* Success Modal Styles */
+.success-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.success-modal-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    padding: 40px 32px 32px 32px;
+    min-width: 320px;
+    max-width: 90vw;
+    text-align: center;
+    position: relative;
+}
+
+.success-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.success-icon {
+    color: #28a745;
+    font-size: 56px;
+    margin-bottom: 18px;
+}
+
+.success-message {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 24px;
+}
+
+.success-close-btn {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.success-close-btn:hover {
+    background: #218838;
+}
+
+/* Notification Modal Styles (Reusable) */
+.notify-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.notify-modal-container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+    padding: 36px 32px 32px 32px;
+    min-width: 340px;
+    max-width: 90vw;
+    text-align: center;
+    position: relative;
+}
+
+.notify-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notify-message {
+    font-size: 20px;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 28px;
+    word-break: break-word;
+}
+
+.notify-close-btn {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 38px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.2s;
+    outline: none;
+}
+
+.notify-close-btn:hover {
+    background: #218838;
+}
+
+/* --- Modal Overlay and Box Styles (from dashboard.css) --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-box {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    padding: 32px 36px 24px 36px;
+    text-align: center;
+    min-width: 320px;
+    max-width: 90vw;
+    position: relative;
+    animation: modalPop 0.2s ease;
+}
+
+@keyframes modalPop {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-message {
+    font-size: 1.1em;
+    margin-bottom: 22px;
+    color: #222;
+}
+
+.modal-delete-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 32px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.08);
+}
+
+.modal-delete-btn:hover {
+    background: #c0392b;
+}
+
+.modal-cancel-btn {
+    background: #f4f4f4;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 32px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-cancel-btn:hover {
+    background: #e0e0e0;
+}
+
+/* --- Modal Form Group Styles (from dashboard.css) --- */
+.modal-form-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.modal-form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.modal-form-group input,
+.modal-form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    margin-bottom: 2px;
+}
+
+.modal-form-group input:focus,
+.modal-form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
